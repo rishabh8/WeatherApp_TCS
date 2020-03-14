@@ -17,7 +17,11 @@ export class AppComponent implements OnInit {
   constructor(
     private weatherService: WeatherService,
   ) {}
+
   getCityDetails(woeid) {
+    return this.weatherService.getCityDetails(woeid).subscribe(data => {
+      this.cityDetails = data;
+    });
     /*
       CHALLENGE
        - pass the city id to service.getCityDetails(woeid)

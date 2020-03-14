@@ -27,6 +27,13 @@ export class SearchComponent implements OnInit {
                   and assign the results to searchResults array
                 - if input field is empty, clear the searResults array
         */
+       if(term)
+       {
+
+       }
+       else{
+
+       }
     }
 
     selectedLocation(cityDetails: ISearchResult) {

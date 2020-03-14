@@ -16,16 +16,16 @@ export class WeatherService {
     private http: HttpClient,
   ) { }
 
-  baseUrl = 'https://cors-anywhere.herokuapp.com/https://www.metaweather.com';
+  baseUrl = 'https://www.metaweather.com/';
 
 
   searchLocation(term): Observable<ISearchResult[]> {
     /*
       CHALLANGE
        - get list of cities based on the searched string
-       sample url: baseUrl/api/location/search/?query=paris
+       sample url: baseUrl/api/location/search/query=paris
     */
-   return;
+    return this.http.get<ISearchResult[]>(this.baseUrl + 'api/location/search/?query=' + term);
 
   }
 
@@ -41,7 +41,7 @@ export class WeatherService {
        - fetch the city weather data
        - transform the received data to required "IWeatherData" format using transformRawData() func
     */
-   return;
+    return this.http.get<IWeatherData>(this.baseUrl + 'api/location/' + woeid);
 
   }
 

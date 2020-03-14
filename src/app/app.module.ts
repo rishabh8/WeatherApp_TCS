@@ -1,3 +1,4 @@
+import { WeatherService } from './services/weather.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -22,7 +23,7 @@ import { CityComponent } from './components/city/city.component';
     HttpClientModule,
     FlexLayoutModule
   ],
-  providers: [],
+  providers: [WeatherService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
