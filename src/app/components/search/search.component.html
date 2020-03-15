@@ -14,7 +14,7 @@
 </p>
 
 <div class="searchOutput">
-    <mat-card *ngIf="searchResults">
+    <mat-card *ngIf="searchResults!=null">
         <!-- If input field has some value and the result from service is an empty array show sorry message else display list -->
         <mat-list role="list" *ngIf="searchResults.length===0 && searchInput.value" class="searchError">
             <mat-list-item  role="listitem">City not found &nbsp; &nbsp;&nbsp;
@@ -25,13 +25,14 @@
               - complete for loop
               - send proper parameters to function on click event
         -->
-        <mat-list role="list" *ngIf="searchResults.length">
+        <mat-list role="list" *ngIf="searchResults.length>0 || searchResults.entries().next().value!=null">
+
             <mat-list-item
                 role="listitem"
                 *ngFor="let res of searchResults"
-                (click)="selectedLocation()"
+                (click)="selectedLocation(res)"
                 class="searchItem">
-
+                {{res.title}}
                 <mat-divider></mat-divider>
             </mat-list-item>
         </mat-list>

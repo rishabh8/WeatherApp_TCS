@@ -1,5 +1,5 @@
-import { AppComponent } from './../../app.component';
-import { Component, OnInit, Input } from '@angular/core';
+
+import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 import { IWeatherData } from '../../models/IWeatherData.interface';
 
 @Component({
@@ -14,12 +14,17 @@ export class CityComponent implements OnInit {
      - display the city details in the template
   */
 
-  cityDetails: IWeatherData;
+  @Input() cityDetails: IWeatherData;
   i;
+
   constructor() { }
 
   ngOnInit() {
 
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(this.cityDetails);
   }
 
 }

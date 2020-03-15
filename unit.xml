@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<testsuite name="Mozilla/5.0 (win32) AppleWebKit/537.36 (KHTML, like Gecko) jsdom/11.12.0" package="unit" timestamp="2020-03-15T17:26:32" id="0" hostname="LAPTOP-3L15SSNH" tests="14" errors="1" failures="5" time="1.621">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (win32) AppleWebKit/537.36 (KHTML, like Gecko) jsdom/11.12.0"/>
+  </properties>
+  <testcase name="AppComponent should render title in a text-mid class" time="0.365" classname="unit.AppComponent"/>
+  <testcase name="AppComponent should call weatherService.getCityDetails when getCityDetails() is called" time="0.253" classname="unit.AppComponent"/>
+  <testcase name="CityComponent should display city and country" time="0.085" classname="unit.CityComponent"/>
+  <testcase name="CityComponent should display formatted date" time="0.087" classname="unit.CityComponent"/>
+  <testcase name="CityComponent should display temperature with only 1 decimal" time="0.091" classname="unit.CityComponent"/>
+  <testcase name="CityComponent should display temperature with minimum 2 digits left to decimal" time="0.081" classname="unit.CityComponent"/>
+  <testcase name="CityComponent should display weather name" time="0.084" classname="unit.CityComponent"/>
+  <testcase name="SearchComponent search() should call weatherService.searchLocation when some character is typed" time="0.115" classname="unit.SearchComponent">
+    <failure type="">Expected spy searchLocation to have been called with [ 'paris' ] but actual calls were [ undefined ].
+    at UserContext.eval (webpack:///./src/app/components/search/search.component.spec.ts?:54:44)
+    at ZoneDelegate.invoke (webpack:///./node_modules/zone.js/dist/zone.js?:387:26)
+    at ProxyZoneSpec.onInvoke (webpack:///./node_modules/zone.js/dist/zone-testing.js?:287:39)
+    at ZoneDelegate.invoke (webpack:///./node_modules/zone.js/dist/zone.js?:386:32)
+</failure>
+  </testcase>
+  <testcase name="SearchComponent search() should not call weatherService.searchLocation when searchedString is empty" time="0.118" classname="unit.SearchComponent">
+    <failure type="">Expected undefined to equal null.
+    at UserContext.eval (webpack:///./src/app/components/search/search.component.spec.ts?:60:45)
+    at ZoneDelegate.invoke (webpack:///./node_modules/zone.js/dist/zone.js?:387:26)
+    at ProxyZoneSpec.onInvoke (webpack:///./node_modules/zone.js/dist/zone-testing.js?:287:39)
+    at ZoneDelegate.invoke (webpack:///./node_modules/zone.js/dist/zone.js?:386:32)
+</failure>
+  </testcase>
+  <testcase name="SearchComponent selectedLocation() should emit cityid" time="0.105" classname="unit.SearchComponent"/>
+  <testcase name="SearchComponent selectedLocation() should clear searchResults" time="0.106" classname="unit.SearchComponent">
+    <failure type="">Expected [ Object({ title: 'wasdas', location_type: 'city', woeid: 1, latt_long: '22' }) ] to be null.
+    at UserContext.eval (webpack:///./src/app/components/search/search.component.spec.ts?:108:45)
+    at ZoneDelegate.invoke (webpack:///./node_modules/zone.js/dist/zone.js?:387:26)
+    at ProxyZoneSpec.onInvoke (webpack:///./node_modules/zone.js/dist/zone-testing.js?:287:39)
+    at ZoneDelegate.invoke (webpack:///./node_modules/zone.js/dist/zone.js?:386:32)
+</failure>
+  </testcase>
+  <testcase name="SearchComponent selectedLocation() should be called when cityName is clicked" time="0.113" classname="unit.SearchComponent"/>
+  <testcase name="WeatherService should fetch cities based on searched query" time="0.01" classname="unit.WeatherService">
+    <failure type="">Error: Expected one matching request for criteria "Match URL: https://www.metaweather.com//api/location/search/?query=san", found none.
+    at HttpClientTestingBackend.expectOne (webpack:///./node_modules/@angular/common/fesm5/http/testing.js?:299:19)
+    at UserContext.eval (webpack:///./src/app/services/weather.service.spec.ts?:38:28)
+    at ZoneDelegate.invoke (webpack:///./node_modules/zone.js/dist/zone.js?:387:26)
+    at ProxyZoneSpec.onInvoke (webpack:///./node_modules/zone.js/dist/zone-testing.js?:287:39)
+    at ZoneDelegate.invoke (webpack:///./node_modules/zone.js/dist/zone.js?:386:32)
+    at Zone.run (webpack:///./node_modules/zone.js/dist/zone.js?:137:43)
+    at runInTestZone (webpack:///./node_modules/zone.js/dist/zone-testing.js?:508:34)
+    at UserContext.eval (webpack:///./node_modules/zone.js/dist/zone-testing.js?:523:20)
+</failure>
+    <failure type="">Error: Expected no open requests, found 1: GET https://www.metaweather.com/api/location/search/
+    at HttpClientTestingBackend.verify (webpack:///./node_modules/@angular/common/fesm5/http/testing.js?:333:19)
+    at UserContext.eval (webpack:///./src/app/services/weather.service.spec.ts?:21:18)
+    at ZoneDelegate.invoke (webpack:///./node_modules/zone.js/dist/zone.js?:387:26)
+    at ProxyZoneSpec.onInvoke (webpack:///./node_modules/zone.js/dist/zone-testing.js?:287:39)
+    at ZoneDelegate.invoke (webpack:///./node_modules/zone.js/dist/zone.js?:386:32)
+    at Zone.run (webpack:///./node_modules/zone.js/dist/zone.js?:137:43)
+    at runInTestZone (webpack:///./node_modules/zone.js/dist/zone-testing.js?:508:34)
+    at UserContext.eval (webpack:///./node_modules/zone.js/dist/zone-testing.js?:523:20)
+</failure>
+  </testcase>
+  <testcase name="WeatherService should fetch the city details based on the cityId" time="0.008" classname="unit.WeatherService">
+    <failure type="">TypeError: Cannot read property 'subscribe' of undefined
+    at UserContext.eval (webpack:///./src/app/services/weather.service.spec.ts?:60:13)
+    at ZoneDelegate.invoke (webpack:///./node_modules/zone.js/dist/zone.js?:387:26)
+    at ProxyZoneSpec.onInvoke (webpack:///./node_modules/zone.js/dist/zone-testing.js?:287:39)
+    at ZoneDelegate.invoke (webpack:///./node_modules/zone.js/dist/zone.js?:386:32)
+    at Zone.run (webpack:///./node_modules/zone.js/dist/zone.js?:137:43)
+    at runInTestZone (webpack:///./node_modules/zone.js/dist/zone-testing.js?:508:34)
+    at UserContext.eval (webpack:///./node_modules/zone.js/dist/zone-testing.js?:523:20)
+</failure>
+    <failure type="">Error: Expected no open requests, found 1: GET https://www.metaweather.com/api/location/2347563
+    at HttpClientTestingBackend.verify (webpack:///./node_modules/@angular/common/fesm5/http/testing.js?:333:19)
+    at UserContext.eval (webpack:///./src/app/services/weather.service.spec.ts?:21:18)
+    at ZoneDelegate.invoke (webpack:///./node_modules/zone.js/dist/zone.js?:387:26)
+    at ProxyZoneSpec.onInvoke (webpack:///./node_modules/zone.js/dist/zone-testing.js?:287:39)
+    at ZoneDelegate.invoke (webpack:///./node_modules/zone.js/dist/zone.js?:386:32)
+    at Zone.run (webpack:///./node_modules/zone.js/dist/zone.js?:137:43)
+    at runInTestZone (webpack:///./node_modules/zone.js/dist/zone-testing.js?:508:34)
+    at UserContext.eval (webpack:///./node_modules/zone.js/dist/zone-testing.js?:523:20)
+</failure>
+  </testcase>
+  <system-out>
+    <![CDATA[Mozilla/5.0 (win32) AppleWebKit/537.36 (KHTML, like Gecko) jsdom/11.12.0 LOG: 'cityDetails'
+,Mozilla/5.0 (win32) AppleWebKit/537.36 (KHTML, like Gecko) jsdom/11.12.0 LOG: 'cityDetails'
+,Mozilla/5.0 (win32) AppleWebKit/537.36 (KHTML, like Gecko) jsdom/11.12.0 LOG: [Object{title: 'Paris', location_type: 'City', woeid: 615702, latt_long: '48.856930,2.341200'}]
+,Mozilla/5.0 (win32) AppleWebKit/537.36 (KHTML, like Gecko) jsdom/11.12.0 LOG: undefined
+,Mozilla/5.0 (win32) AppleWebKit/537.36 (KHTML, like Gecko) jsdom/11.12.0 ERROR
+  An error was thrown in afterAll
+  Error: Expected no open requests, found 1: GET https://www.metaweather.com/api/location/2347563
+      at HttpClientTestingBackend.verify (webpack:///./node_modules/@angular/common/fesm5/http/testing.js?:333:19)
+      at UserContext.eval (webpack:///./src/app/services/weather.service.spec.ts?:24:18)
+      at ZoneDelegate.invokeTask (webpack:///./node_modules/zone.js/dist/zone.js?:420:31)
+      at Zone.runTask (webpack:///./node_modules/zone.js/dist/zone.js?:187:47)
+
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>
