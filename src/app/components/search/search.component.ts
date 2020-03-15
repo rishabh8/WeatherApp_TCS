@@ -1,3 +1,4 @@
+import { IWeatherData } from './../../models/IWeatherData.interface';
 import { WeatherService } from './../../services/weather.service';
 import { Component, OnInit, ViewChild, Output, EventEmitter } from '@angular/core';
 import { ISearchResult } from '../../models/IWeatherData.interface';
@@ -11,7 +12,7 @@ export class SearchComponent implements OnInit {
 
     @ViewChild('searchInput') searchInput;
     searchResults: ISearchResult[];
-    @Output() selectedCity;
+    @Output() selectedCity = new EventEmitter<IWeatherData>();
 
     constructor(
         private weatherService: WeatherService,
@@ -19,7 +20,7 @@ export class SearchComponent implements OnInit {
     ngOnInit() {
     }
 
-    search(term) {
+    search(term?) {
         /*
             CHALLENGE
                 - if user has typed something in the input field,
@@ -27,13 +28,10 @@ export class SearchComponent implements OnInit {
                   and assign the results to searchResults array
                 - if input field is empty, clear the searResults array
         */
-       if(term)
-       {
-
-       }
-       else{
-
-       }
+       this.weatherService.searchLocation(term).subscribe(data => {
+         this.searchResults = data;
+         console.log(data);
+       });
     }
 
     selectedLocation(cityDetails: ISearchResult) {
@@ -45,5 +43,9 @@ export class SearchComponent implements OnInit {
               - clear all the results
               - send the cityid (woeid) to the parent component (AppComponent)
         */
+       this.weatherService.getCityDetails(cityDetails.woeid).subscribe(data => {
+         console.log(data);
+         this.selectedCity.emit(data);
+       });
     }
 }

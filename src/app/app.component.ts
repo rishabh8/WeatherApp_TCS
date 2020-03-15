@@ -15,16 +15,16 @@ export class AppComponent implements OnInit {
   }
 
   constructor(
-    private weatherService: WeatherService,
+    private weatherService: WeatherService
   ) {}
 
-  getCityDetails(woeid) {
-    return this.weatherService.getCityDetails(woeid).subscribe(data => {
-      this.cityDetails = data;
-    });
+  getCityDetails(woeid?) {
     /*
       CHALLENGE
        - pass the city id to service.getCityDetails(woeid)
     */
+    return this.weatherService.getCityDetails(woeid).subscribe(data => {
+      this.cityDetails = data;
+    });
   }
 }

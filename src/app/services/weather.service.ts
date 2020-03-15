@@ -12,8 +12,9 @@ import { ISearchResult, IWeatherData } from '../models/IWeatherData.interface';
 })
 export class WeatherService {
 
+  private rawData: IWeatherRawData;
   constructor(
-    private http: HttpClient,
+    private http: HttpClient
   ) { }
 
   baseUrl = 'https://www.metaweather.com/';
@@ -26,7 +27,6 @@ export class WeatherService {
        sample url: baseUrl/api/location/search/query=paris
     */
     return this.http.get<ISearchResult[]>(this.baseUrl + 'api/location/search/?query=' + term);
-
   }
 
   getCityDetails(woeid): Observable<IWeatherData> {
@@ -41,8 +41,12 @@ export class WeatherService {
        - fetch the city weather data
        - transform the received data to required "IWeatherData" format using transformRawData() func
     */
-    return this.http.get<IWeatherData>(this.baseUrl + 'api/location/' + woeid);
-
+   return Observable.create(
+    this.http.get<IWeatherRawData>(this.baseUrl + 'api/location/' + woeid).subscribe(data => {
+      this.rawData = data;
+      console.log(this.transformRawData(this.rawData));
+      return this.transformRawData(this.rawData);
+    }));
   }
 
   transformRawData(rawData: IWeatherRawData) {

@@ -1,3 +1,4 @@
+import { AppComponent } from './../../app.component';
 import { Component, OnInit, Input } from '@angular/core';
 import { IWeatherData } from '../../models/IWeatherData.interface';
 
