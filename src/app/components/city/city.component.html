@@ -9,7 +9,7 @@
       - minimum 2 digits to the left of decimal
       - exactly 1 digit to the right of decimal
   -->
-<div class="container" *ngIf="cityDetails">
+<div class="container" *ngIf="cityDetails!=null">
 
   <p class="cityName">{{ cityDetails.city }}, {{ cityDetails.country }}</p>
   <div fxLayout="row" fxLayoutAlign="center none" fxLayoutGap="15px">

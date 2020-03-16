@@ -1,22 +1,17 @@
 <?xml version="1.0"?>
-<testsuite name="Mozilla/5.0 (win32) AppleWebKit/537.36 (KHTML, like Gecko) jsdom/11.12.0" package="unit" timestamp="2020-03-16T11:58:06" id="0" hostname="LAPTOP-3L15SSNH" tests="14" errors="1" failures="5" time="2.446">
+<testsuite name="Mozilla/5.0 (win32) AppleWebKit/537.36 (KHTML, like Gecko) jsdom/11.12.0" package="unit" timestamp="2020-03-16T12:46:58" id="0" hostname="LAPTOP-3L15SSNH" tests="14" errors="1" failures="5" time="2.181">
   <properties>
     <property name="browser.fullName" value="Mozilla/5.0 (win32) AppleWebKit/537.36 (KHTML, like Gecko) jsdom/11.12.0"/>
   </properties>
-  <testcase name="AppComponent should render title in a text-mid class" time="0.389" classname="unit.AppComponent"/>
-  <testcase name="AppComponent should call weatherService.getCityDetails when getCityDetails() is called" time="1.001" classname="unit.AppComponent">
-    <failure type="">this._subscribe is not a function thrown
-</failure>
-    <failure type="">[object ErrorEvent] thrown
-</failure>
-  </testcase>
-  <testcase name="CityComponent should display city and country" time="0.094" classname="unit.CityComponent"/>
-  <testcase name="CityComponent should display formatted date" time="0.09" classname="unit.CityComponent"/>
-  <testcase name="CityComponent should display temperature with only 1 decimal" time="0.094" classname="unit.CityComponent"/>
-  <testcase name="CityComponent should display temperature with minimum 2 digits left to decimal" time="0.095" classname="unit.CityComponent"/>
-  <testcase name="CityComponent should display weather name" time="0.094" classname="unit.CityComponent"/>
-  <testcase name="SearchComponent search() should call weatherService.searchLocation when some character is typed" time="0.11" classname="unit.SearchComponent"/>
-  <testcase name="SearchComponent search() should not call weatherService.searchLocation when searchedString is empty" time="0.11" classname="unit.SearchComponent">
+  <testcase name="AppComponent should render title in a text-mid class" time="0.499" classname="unit.AppComponent"/>
+  <testcase name="AppComponent should call weatherService.getCityDetails when getCityDetails() is called" time="0.294" classname="unit.AppComponent"/>
+  <testcase name="CityComponent should display city and country" time="0.096" classname="unit.CityComponent"/>
+  <testcase name="CityComponent should display formatted date" time="0.258" classname="unit.CityComponent"/>
+  <testcase name="CityComponent should display temperature with only 1 decimal" time="0.084" classname="unit.CityComponent"/>
+  <testcase name="CityComponent should display temperature with minimum 2 digits left to decimal" time="0.082" classname="unit.CityComponent"/>
+  <testcase name="CityComponent should display weather name" time="0.091" classname="unit.CityComponent"/>
+  <testcase name="SearchComponent search() should call weatherService.searchLocation when some character is typed" time="0.106" classname="unit.SearchComponent"/>
+  <testcase name="SearchComponent search() should not call weatherService.searchLocation when searchedString is empty" time="0.097" classname="unit.SearchComponent">
     <failure type="">Expected undefined to equal null.
     at UserContext.eval (webpack:///./src/app/components/search/search.component.spec.ts?:60:45)
     at ZoneDelegate.invoke (webpack:///./node_modules/zone.js/dist/zone.js?:387:26)
@@ -30,8 +25,8 @@
     at ZoneDelegate.invoke (webpack:///./node_modules/zone.js/dist/zone.js?:386:32)
 </failure>
   </testcase>
-  <testcase name="SearchComponent selectedLocation() should emit cityid" time="0.116" classname="unit.SearchComponent"/>
-  <testcase name="SearchComponent selectedLocation() should clear searchResults" time="0.136" classname="unit.SearchComponent">
+  <testcase name="SearchComponent selectedLocation() should emit cityid" time="0.103" classname="unit.SearchComponent"/>
+  <testcase name="SearchComponent selectedLocation() should clear searchResults" time="0.187" classname="unit.SearchComponent">
     <failure type="">Expected [  ] to be null.
     at UserContext.eval (webpack:///./src/app/components/search/search.component.spec.ts?:108:45)
     at ZoneDelegate.invoke (webpack:///./node_modules/zone.js/dist/zone.js?:387:26)
@@ -39,8 +34,13 @@
     at ZoneDelegate.invoke (webpack:///./node_modules/zone.js/dist/zone.js?:386:32)
 </failure>
   </testcase>
-  <testcase name="SearchComponent selectedLocation() should be called when cityName is clicked" time="0.097" classname="unit.SearchComponent"/>
-  <testcase name="WeatherService should fetch cities based on searched query" time="0.012" classname="unit.WeatherService">
+  <testcase name="SearchComponent selectedLocation() should be called when cityName is clicked" time="0.251" classname="unit.SearchComponent">
+    <failure type="">Http failure response for (unknown url): 0 Unknown Error thrown
+</failure>
+    <failure type="">[object ErrorEvent] thrown
+</failure>
+  </testcase>
+  <testcase name="WeatherService should fetch cities based on searched query" time="0.016" classname="unit.WeatherService">
     <failure type="">Error: Expected one matching request for criteria "Match URL: https://www.metaweather.com//api/location/search/?query=san", found none.
     at HttpClientTestingBackend.expectOne (webpack:///./node_modules/@angular/common/fesm5/http/testing.js?:299:19)
     at UserContext.eval (webpack:///./src/app/services/weather.service.spec.ts?:38:28)
@@ -62,7 +62,7 @@
     at UserContext.eval (webpack:///./node_modules/zone.js/dist/zone-testing.js?:523:20)
 </failure>
   </testcase>
-  <testcase name="WeatherService should fetch the city details based on the cityId" time="0.008" classname="unit.WeatherService">
+  <testcase name="WeatherService should fetch the city details based on the cityId" time="0.017" classname="unit.WeatherService">
     <failure type="">Failed: this._subscribe is not a function
 TypeError: this._subscribe is not a function
     at Observable._trySubscribe (webpack:///./node_modules/rxjs/_esm5/internal/Observable.js?:48:25)

@@ -17,6 +17,7 @@ export class AppComponent implements OnInit {
     //   this.cityDetails = data;
     // });
 
+
   }
 
   constructor(
@@ -28,9 +29,6 @@ export class AppComponent implements OnInit {
       CHALLENGE
        - pass the city id to service.getCityDetails(woeid)
     */
-    this.weatherService.getCityDetails(woeid).subscribe(data => {
-      console.log(data);
-      this.cityDetails = data;
-    });
+    this.weatherService.getCityDetails(woeid);
   }
 }
