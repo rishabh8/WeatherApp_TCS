@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
-<testsuite name="Mozilla/5.0 (win32) AppleWebKit/537.36 (KHTML, like Gecko) jsdom/11.12.0" package="unit" timestamp="2020-03-15T17:26:32" id="0" hostname="LAPTOP-3L15SSNH" tests="14" errors="1" failures="5" time="1.621">
+<testsuite name="Mozilla/5.0 (win32) AppleWebKit/537.36 (KHTML, like Gecko) jsdom/11.12.0" package="unit" timestamp="2020-03-16T05:46:22" id="0" hostname="LAPTOP-3L15SSNH" tests="14" errors="1" failures="5" time="1.944">
   <properties>
     <property name="browser.fullName" value="Mozilla/5.0 (win32) AppleWebKit/537.36 (KHTML, like Gecko) jsdom/11.12.0"/>
   </properties>
-  <testcase name="AppComponent should render title in a text-mid class" time="0.365" classname="unit.AppComponent"/>
-  <testcase name="AppComponent should call weatherService.getCityDetails when getCityDetails() is called" time="0.253" classname="unit.AppComponent"/>
-  <testcase name="CityComponent should display city and country" time="0.085" classname="unit.CityComponent"/>
-  <testcase name="CityComponent should display formatted date" time="0.087" classname="unit.CityComponent"/>
-  <testcase name="CityComponent should display temperature with only 1 decimal" time="0.091" classname="unit.CityComponent"/>
-  <testcase name="CityComponent should display temperature with minimum 2 digits left to decimal" time="0.081" classname="unit.CityComponent"/>
-  <testcase name="CityComponent should display weather name" time="0.084" classname="unit.CityComponent"/>
-  <testcase name="SearchComponent search() should call weatherService.searchLocation when some character is typed" time="0.115" classname="unit.SearchComponent">
+  <testcase name="AppComponent should render title in a text-mid class" time="0.43" classname="unit.AppComponent"/>
+  <testcase name="AppComponent should call weatherService.getCityDetails when getCityDetails() is called" time="0.281" classname="unit.AppComponent"/>
+  <testcase name="CityComponent should display city and country" time="0.108" classname="unit.CityComponent"/>
+  <testcase name="CityComponent should display formatted date" time="0.093" classname="unit.CityComponent"/>
+  <testcase name="CityComponent should display temperature with only 1 decimal" time="0.089" classname="unit.CityComponent"/>
+  <testcase name="CityComponent should display temperature with minimum 2 digits left to decimal" time="0.095" classname="unit.CityComponent"/>
+  <testcase name="CityComponent should display weather name" time="0.11" classname="unit.CityComponent"/>
+  <testcase name="SearchComponent search() should call weatherService.searchLocation when some character is typed" time="0.165" classname="unit.SearchComponent">
     <failure type="">Expected spy searchLocation to have been called with [ 'paris' ] but actual calls were [ undefined ].
     at UserContext.eval (webpack:///./src/app/components/search/search.component.spec.ts?:54:44)
     at ZoneDelegate.invoke (webpack:///./node_modules/zone.js/dist/zone.js?:387:26)
@@ -18,7 +18,7 @@
     at ZoneDelegate.invoke (webpack:///./node_modules/zone.js/dist/zone.js?:386:32)
 </failure>
   </testcase>
-  <testcase name="SearchComponent search() should not call weatherService.searchLocation when searchedString is empty" time="0.118" classname="unit.SearchComponent">
+  <testcase name="SearchComponent search() should not call weatherService.searchLocation when searchedString is empty" time="0.134" classname="unit.SearchComponent">
     <failure type="">Expected undefined to equal null.
     at UserContext.eval (webpack:///./src/app/components/search/search.component.spec.ts?:60:45)
     at ZoneDelegate.invoke (webpack:///./node_modules/zone.js/dist/zone.js?:387:26)
@@ -26,17 +26,17 @@
     at ZoneDelegate.invoke (webpack:///./node_modules/zone.js/dist/zone.js?:386:32)
 </failure>
   </testcase>
-  <testcase name="SearchComponent selectedLocation() should emit cityid" time="0.105" classname="unit.SearchComponent"/>
-  <testcase name="SearchComponent selectedLocation() should clear searchResults" time="0.106" classname="unit.SearchComponent">
-    <failure type="">Expected [ Object({ title: 'wasdas', location_type: 'city', woeid: 1, latt_long: '22' }) ] to be null.
+  <testcase name="SearchComponent selectedLocation() should emit cityid" time="0.143" classname="unit.SearchComponent"/>
+  <testcase name="SearchComponent selectedLocation() should clear searchResults" time="0.141" classname="unit.SearchComponent">
+    <failure type="">Expected [  ] to be null.
     at UserContext.eval (webpack:///./src/app/components/search/search.component.spec.ts?:108:45)
     at ZoneDelegate.invoke (webpack:///./node_modules/zone.js/dist/zone.js?:387:26)
     at ProxyZoneSpec.onInvoke (webpack:///./node_modules/zone.js/dist/zone-testing.js?:287:39)
     at ZoneDelegate.invoke (webpack:///./node_modules/zone.js/dist/zone.js?:386:32)
 </failure>
   </testcase>
-  <testcase name="SearchComponent selectedLocation() should be called when cityName is clicked" time="0.113" classname="unit.SearchComponent"/>
-  <testcase name="WeatherService should fetch cities based on searched query" time="0.01" classname="unit.WeatherService">
+  <testcase name="SearchComponent selectedLocation() should be called when cityName is clicked" time="0.132" classname="unit.SearchComponent"/>
+  <testcase name="WeatherService should fetch cities based on searched query" time="0.015" classname="unit.WeatherService">
     <failure type="">Error: Expected one matching request for criteria "Match URL: https://www.metaweather.com//api/location/search/?query=san", found none.
     at HttpClientTestingBackend.expectOne (webpack:///./node_modules/@angular/common/fesm5/http/testing.js?:299:19)
     at UserContext.eval (webpack:///./src/app/services/weather.service.spec.ts?:38:28)
