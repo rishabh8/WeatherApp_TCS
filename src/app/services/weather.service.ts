@@ -12,8 +12,8 @@ import {Subject, Observable} from 'rxjs';
 export class WeatherService {
 
   private rawData: IWeatherRawData;
-  cityDetails = new Subject();
-  cityDetailChange = this.cityDetails.asObservable();
+  //cityDetails = new Subject();
+  //cityDetailChange = this.cityDetails.asObservable();
 
   constructor(
     private http: HttpClient
@@ -31,7 +31,7 @@ export class WeatherService {
     return this.http.get<ISearchResult[]>(this.baseUrl + 'api/location/search/?query=' + term);
   }
 
-  getCityDetails(woeid): any {
+  getCityDetails(woeid): Observable<IWeatherData> {
 
 
     /*
@@ -45,11 +45,12 @@ export class WeatherService {
        - fetch the city weather data
        - transform the received data to required "IWeatherData" format using transformRawData() func
     */
+   return Observable.create(
     this.http.get<IWeatherRawData>(this.baseUrl + 'api/location/' + woeid).subscribe(data => {
       this.rawData = data;
-      console.log(this.transformRawData(this.rawData));
-      this.cityDetails.next(this.transformRawData(this.rawData));
-    });
+      //console.log(this.transformRawData(this.rawData));
+      return this.transformRawData(this.rawData);
+    }));
   }
 
   transformRawData(rawData: IWeatherRawData) {

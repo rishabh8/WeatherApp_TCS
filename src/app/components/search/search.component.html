@@ -8,15 +8,15 @@
         #searchInput
         matInput
         placeholder="paris, london..."
-        (keyup)="search(searchInput)"
+        (keyup)="search(searchInput.value)"
         class="searchInput">
   </mat-form-field>
 </p>
 
 <div class="searchOutput">
-    <mat-card *ngIf="searchResults!=null">
+    <mat-card *ngIf="searchResults">
         <!-- If input field has some value and the result from service is an empty array show sorry message else display list -->
-        <mat-list role="list" *ngIf="searchResults.length===0 && searchInput.value" class="searchError">
+        <mat-list role="list" *ngIf="searchResults.length===0 && searchInput.value===null" class="searchError">
             <mat-list-item  role="listitem">City not found &nbsp; &nbsp;&nbsp;
                 <mat-icon matSuffix>sentiment_very_dissatisfied</mat-icon>
             </mat-list-item>

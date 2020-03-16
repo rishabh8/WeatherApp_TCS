@@ -9,13 +9,14 @@ import { IWeatherData } from './models/IWeatherData.interface';
 })
 export class AppComponent implements OnInit {
   title = 'My Weather App';
-  cityDetails;
+  cityDetails : IWeatherData;
 
   ngOnInit() {
-    this.weatherService.cityDetailChange.subscribe(data => {
-      console.log(data);
-      this.cityDetails = data;
-    });
+    // this.weatherService.cityDetailChange.subscribe(data => {
+    //   //console.log(data);
+    //   this.cityDetails = data;
+    // });
+
   }
 
   constructor(
@@ -27,6 +28,9 @@ export class AppComponent implements OnInit {
       CHALLENGE
        - pass the city id to service.getCityDetails(woeid)
     */
-    this.weatherService.getCityDetails(woeid);
+    this.weatherService.getCityDetails(woeid).subscribe(data => {
+      console.log(data);
+      this.cityDetails = data;
+    });
   }
 }
