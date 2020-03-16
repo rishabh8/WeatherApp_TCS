@@ -30,17 +30,15 @@ describe('WeatherService', () => {
 
   it('should fetch cities based on searched query', () => {
     const mockSearchLocationData = [
-      {'title': 'San Francisco', 'location_type': 'City', 'woeid': 2487956, 'latt_long': '37.777119, -122.41964'},
-      {'title': 'San Diego', 'location_type': 'City', 'woeid': 2487889, 'latt_long': '32.715691,-117.161720'},
-      {'title': 'San Jose', 'location_type': 'City', 'woeid': 2488042, 'latt_long': '37.338581,-121.885567'},
+      {"title":"Paris","location_type":"City","woeid":615702,"latt_long":"48.856930,2.341200"}
     ];
-    const searchedString = 'san';
+    const searchedString = 'paris';
 
     service.searchLocation(searchedString)
            .subscribe(
               data => {
                 expect(data).toEqual(mockSearchLocationData);
-                expect(data.length).toBe(3);
+                expect(data.length).toBe(1);
               },
               fail
             );

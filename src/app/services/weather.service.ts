@@ -1,7 +1,7 @@
 import { ICityWeather } from './../models/IWeatherData.interface';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+
 
 import { IWeatherRawData } from '../models/IWeatherRawData.interface';
 import { ISearchResult, IWeatherData } from '../models/IWeatherData.interface';
@@ -19,7 +19,7 @@ export class WeatherService {
     private http: HttpClient
   ) { }
 
-  baseUrl = 'https://www.metaweather.com/';
+  baseUrl = 'https://cors-anywhere.herokuapp.com/https://www.metaweather.com/';
 
 
   searchLocation(term): Observable<ISearchResult[]> {
@@ -62,7 +62,7 @@ export class WeatherService {
       const weather_name = obj.weather_state_name;
       const weather_image = `https://www.metaweather.com/static/img/weather/.svg`;
 
-      transformedWeather.push({ date,temperature,weather_name,weather_image} as ICityWeather);
+      transformedWeather.push({ date, temperature, weather_name, weather_image} as ICityWeather);
     });
 
     return {

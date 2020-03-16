@@ -1,49 +1,22 @@
 <?xml version="1.0"?>
-<testsuite name="Mozilla/5.0 (win32) AppleWebKit/537.36 (KHTML, like Gecko) jsdom/11.12.0" package="unit" timestamp="2020-03-16T12:46:58" id="0" hostname="LAPTOP-3L15SSNH" tests="14" errors="1" failures="5" time="2.181">
+<testsuite name="Mozilla/5.0 (win32) AppleWebKit/537.36 (KHTML, like Gecko) jsdom/11.12.0" package="unit" timestamp="2020-03-16T18:37:47" id="0" hostname="LAPTOP-3L15SSNH" tests="12" errors="1" failures="2" time="1.873">
   <properties>
     <property name="browser.fullName" value="Mozilla/5.0 (win32) AppleWebKit/537.36 (KHTML, like Gecko) jsdom/11.12.0"/>
   </properties>
-  <testcase name="AppComponent should render title in a text-mid class" time="0.499" classname="unit.AppComponent"/>
-  <testcase name="AppComponent should call weatherService.getCityDetails when getCityDetails() is called" time="0.294" classname="unit.AppComponent"/>
-  <testcase name="CityComponent should display city and country" time="0.096" classname="unit.CityComponent"/>
-  <testcase name="CityComponent should display formatted date" time="0.258" classname="unit.CityComponent"/>
-  <testcase name="CityComponent should display temperature with only 1 decimal" time="0.084" classname="unit.CityComponent"/>
-  <testcase name="CityComponent should display temperature with minimum 2 digits left to decimal" time="0.082" classname="unit.CityComponent"/>
-  <testcase name="CityComponent should display weather name" time="0.091" classname="unit.CityComponent"/>
-  <testcase name="SearchComponent search() should call weatherService.searchLocation when some character is typed" time="0.106" classname="unit.SearchComponent"/>
-  <testcase name="SearchComponent search() should not call weatherService.searchLocation when searchedString is empty" time="0.097" classname="unit.SearchComponent">
-    <failure type="">Expected undefined to equal null.
-    at UserContext.eval (webpack:///./src/app/components/search/search.component.spec.ts?:60:45)
-    at ZoneDelegate.invoke (webpack:///./node_modules/zone.js/dist/zone.js?:387:26)
-    at ProxyZoneSpec.onInvoke (webpack:///./node_modules/zone.js/dist/zone-testing.js?:287:39)
-    at ZoneDelegate.invoke (webpack:///./node_modules/zone.js/dist/zone.js?:386:32)
-</failure>
-    <failure type="">Expected spy searchLocation not to have been called with [ '' ] but it was.
-    at UserContext.eval (webpack:///./src/app/components/search/search.component.spec.ts?:61:48)
-    at ZoneDelegate.invoke (webpack:///./node_modules/zone.js/dist/zone.js?:387:26)
-    at ProxyZoneSpec.onInvoke (webpack:///./node_modules/zone.js/dist/zone-testing.js?:287:39)
-    at ZoneDelegate.invoke (webpack:///./node_modules/zone.js/dist/zone.js?:386:32)
-</failure>
-  </testcase>
-  <testcase name="SearchComponent selectedLocation() should emit cityid" time="0.103" classname="unit.SearchComponent"/>
-  <testcase name="SearchComponent selectedLocation() should clear searchResults" time="0.187" classname="unit.SearchComponent">
-    <failure type="">Expected [  ] to be null.
-    at UserContext.eval (webpack:///./src/app/components/search/search.component.spec.ts?:108:45)
-    at ZoneDelegate.invoke (webpack:///./node_modules/zone.js/dist/zone.js?:387:26)
-    at ProxyZoneSpec.onInvoke (webpack:///./node_modules/zone.js/dist/zone-testing.js?:287:39)
-    at ZoneDelegate.invoke (webpack:///./node_modules/zone.js/dist/zone.js?:386:32)
-</failure>
-  </testcase>
-  <testcase name="SearchComponent selectedLocation() should be called when cityName is clicked" time="0.251" classname="unit.SearchComponent">
-    <failure type="">Http failure response for (unknown url): 0 Unknown Error thrown
-</failure>
-    <failure type="">[object ErrorEvent] thrown
-</failure>
-  </testcase>
+  <testcase name="AppComponent should render title in a text-mid class" time="0.431" classname="unit.AppComponent"/>
+  <testcase name="AppComponent should call weatherService.getCityDetails when getCityDetails() is called" time="0.351" classname="unit.AppComponent"/>
+  <testcase name="CityComponent should display city and country" time="0.131" classname="unit.CityComponent"/>
+  <testcase name="CityComponent should display formatted date" time="0.095" classname="unit.CityComponent"/>
+  <testcase name="CityComponent should display temperature with only 1 decimal" time="0.097" classname="unit.CityComponent"/>
+  <testcase name="CityComponent should display temperature with minimum 2 digits left to decimal" time="0.09" classname="unit.CityComponent"/>
+  <testcase name="CityComponent should display weather name" time="0.085" classname="unit.CityComponent"/>
+  <testcase name="SearchComponent search() should call weatherService.searchLocation when some character is typed" time="0.115" classname="unit.SearchComponent"/>
+  <testcase name="SearchComponent selectedLocation() should emit cityid" time="0.111" classname="unit.SearchComponent"/>
+  <testcase name="SearchComponent selectedLocation() should be called when cityName is clicked" time="0.298" classname="unit.SearchComponent"/>
   <testcase name="WeatherService should fetch cities based on searched query" time="0.016" classname="unit.WeatherService">
-    <failure type="">Error: Expected one matching request for criteria "Match URL: https://www.metaweather.com//api/location/search/?query=san", found none.
+    <failure type="">Error: Expected one matching request for criteria "Match URL: https://cors-anywhere.herokuapp.com/https://www.metaweather.com//api/location/search/?query=paris", found none.
     at HttpClientTestingBackend.expectOne (webpack:///./node_modules/@angular/common/fesm5/http/testing.js?:299:19)
-    at UserContext.eval (webpack:///./src/app/services/weather.service.spec.ts?:38:28)
+    at UserContext.eval (webpack:///./src/app/services/weather.service.spec.ts?:36:28)
     at ZoneDelegate.invoke (webpack:///./node_modules/zone.js/dist/zone.js?:387:26)
     at ProxyZoneSpec.onInvoke (webpack:///./node_modules/zone.js/dist/zone-testing.js?:287:39)
     at ZoneDelegate.invoke (webpack:///./node_modules/zone.js/dist/zone.js?:386:32)
@@ -51,7 +24,7 @@
     at runInTestZone (webpack:///./node_modules/zone.js/dist/zone-testing.js?:508:34)
     at UserContext.eval (webpack:///./node_modules/zone.js/dist/zone-testing.js?:523:20)
 </failure>
-    <failure type="">Error: Expected no open requests, found 1: GET https://www.metaweather.com/api/location/search/
+    <failure type="">Error: Expected no open requests, found 1: GET https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/
     at HttpClientTestingBackend.verify (webpack:///./node_modules/@angular/common/fesm5/http/testing.js?:333:19)
     at UserContext.eval (webpack:///./src/app/services/weather.service.spec.ts?:21:18)
     at ZoneDelegate.invoke (webpack:///./node_modules/zone.js/dist/zone.js?:387:26)
@@ -62,12 +35,12 @@
     at UserContext.eval (webpack:///./node_modules/zone.js/dist/zone-testing.js?:523:20)
 </failure>
   </testcase>
-  <testcase name="WeatherService should fetch the city details based on the cityId" time="0.017" classname="unit.WeatherService">
+  <testcase name="WeatherService should fetch the city details based on the cityId" time="0.053" classname="unit.WeatherService">
     <failure type="">Failed: this._subscribe is not a function
 TypeError: this._subscribe is not a function
     at Observable._trySubscribe (webpack:///./node_modules/rxjs/_esm5/internal/Observable.js?:48:25)
     at Observable.subscribe (webpack:///./node_modules/rxjs/_esm5/internal/Observable.js?:34:22)
-    at UserContext.eval (webpack:///./src/app/services/weather.service.spec.ts?:60:14)
+    at UserContext.eval (webpack:///./src/app/services/weather.service.spec.ts?:58:14)
     at ZoneDelegate.invoke (webpack:///./node_modules/zone.js/dist/zone.js?:387:26)
     at ProxyZoneSpec.onInvoke (webpack:///./node_modules/zone.js/dist/zone-testing.js?:287:39)
     at ZoneDelegate.invoke (webpack:///./node_modules/zone.js/dist/zone.js?:386:32)
@@ -75,9 +48,9 @@ TypeError: this._subscribe is not a function
     at runInTestZone (webpack:///./node_modules/zone.js/dist/zone-testing.js?:508:34)
     at UserContext.eval (webpack:///./node_modules/zone.js/dist/zone-testing.js?:523:20)
 </failure>
-    <failure type="">Error: Expected one matching request for criteria "Match URL: https://www.metaweather.com//api/location/2347563", found none.
+    <failure type="">Error: Expected one matching request for criteria "Match URL: https://cors-anywhere.herokuapp.com/https://www.metaweather.com//api/location/2347563", found none.
     at HttpClientTestingBackend.expectOne (webpack:///./node_modules/@angular/common/fesm5/http/testing.js?:299:19)
-    at UserContext.eval (webpack:///./src/app/services/weather.service.spec.ts?:61:28)
+    at UserContext.eval (webpack:///./src/app/services/weather.service.spec.ts?:59:28)
     at ZoneDelegate.invoke (webpack:///./node_modules/zone.js/dist/zone.js?:387:26)
     at ProxyZoneSpec.onInvoke (webpack:///./node_modules/zone.js/dist/zone-testing.js?:287:39)
     at ZoneDelegate.invoke (webpack:///./node_modules/zone.js/dist/zone.js?:386:32)
@@ -85,7 +58,7 @@ TypeError: this._subscribe is not a function
     at runInTestZone (webpack:///./node_modules/zone.js/dist/zone-testing.js?:508:34)
     at UserContext.eval (webpack:///./node_modules/zone.js/dist/zone-testing.js?:523:20)
 </failure>
-    <failure type="">Error: Expected no open requests, found 1: GET https://www.metaweather.com/api/location/2347563
+    <failure type="">Error: Expected no open requests, found 1: GET https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/2347563
     at HttpClientTestingBackend.verify (webpack:///./node_modules/@angular/common/fesm5/http/testing.js?:333:19)
     at UserContext.eval (webpack:///./src/app/services/weather.service.spec.ts?:21:18)
     at ZoneDelegate.invoke (webpack:///./node_modules/zone.js/dist/zone.js?:387:26)
@@ -101,7 +74,7 @@ TypeError: this._subscribe is not a function
 ,Mozilla/5.0 (win32) AppleWebKit/537.36 (KHTML, like Gecko) jsdom/11.12.0 LOG: 'cityDetails'
 ,Mozilla/5.0 (win32) AppleWebKit/537.36 (KHTML, like Gecko) jsdom/11.12.0 ERROR
   An error was thrown in afterAll
-  Error: Expected no open requests, found 1: GET https://www.metaweather.com/api/location/2347563
+  Error: Expected no open requests, found 1: GET https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/2347563
       at HttpClientTestingBackend.verify (webpack:///./node_modules/@angular/common/fesm5/http/testing.js?:333:19)
       at UserContext.eval (webpack:///./src/app/services/weather.service.spec.ts?:24:18)
       at ZoneDelegate.invokeTask (webpack:///./node_modules/zone.js/dist/zone.js?:420:31)
