@@ -11,15 +11,8 @@ import { Subject, } from 'rxjs';
 export class AppComponent implements OnInit {
   title = 'My Weather App';
   cityDetails;
-  // cityDetailsSub = new Subject<IWeatherData>();
-  // cityDetailChange = this.cityDetailsSub.asObservable();
 
-  ngOnInit() {
-    // this.weatherService.cityDetailChange.subscribe(data => {
-    //   //console.log(data);
-    //   this.cityDetails = data;
-    // });
-  }
+  ngOnInit() {  }
 
   constructor(private weatherService: WeatherService) {}
 
@@ -30,8 +23,6 @@ export class AppComponent implements OnInit {
     */
     this.weatherService.getCityDetails(woeid).subscribe(data => {
       this.cityDetails = data;
-      console.log(this.cityDetails);
     });
-    console.log(this.cityDetails);
   }
 }

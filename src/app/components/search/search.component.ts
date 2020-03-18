@@ -47,8 +47,8 @@ export class SearchComponent implements OnInit {
       //    console.log(data);
       //    this.selectedCity.emit(data);
       //  });
-      this.searchInput.value = '';
-      this.searchResults.length=0;
+      //this.searchInput.value = '';
+
       this.selectedCity.emit(cityDetails.woeid);
 
     }
