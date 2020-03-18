@@ -1,23 +1,20 @@
 <?xml version="1.0"?>
-<testsuite name="Mozilla/5.0 (win32) AppleWebKit/537.36 (KHTML, like Gecko) jsdom/11.12.0" package="unit" timestamp="2020-03-18T18:16:33" id="0" hostname="LAPTOP-3L15SSNH" tests="10" errors="0" failures="0" time="1.366">
+<testsuite name="Mozilla/5.0 (win32) AppleWebKit/537.36 (KHTML, like Gecko) jsdom/11.12.0" package="unit" timestamp="2020-03-18T19:07:03" id="0" hostname="LAPTOP-3L15SSNH" tests="10" errors="0" failures="0" time="1.375">
   <properties>
     <property name="browser.fullName" value="Mozilla/5.0 (win32) AppleWebKit/537.36 (KHTML, like Gecko) jsdom/11.12.0"/>
   </properties>
-  <testcase name="AppComponent should render title in a text-mid class" time="0.357" classname="unit.AppComponent"/>
-  <testcase name="AppComponent should call weatherService.getCityDetails when getCityDetails() is called" time="0.248" classname="unit.AppComponent"/>
-  <testcase name="CityComponent should display city and country" time="0.087" classname="unit.CityComponent"/>
-  <testcase name="CityComponent should display formatted date" time="0.1" classname="unit.CityComponent"/>
-  <testcase name="CityComponent should display temperature with only 1 decimal" time="0.093" classname="unit.CityComponent"/>
-  <testcase name="CityComponent should display temperature with minimum 2 digits left to decimal" time="0.085" classname="unit.CityComponent"/>
-  <testcase name="CityComponent should display weather name" time="0.088" classname="unit.CityComponent"/>
-  <testcase name="SearchComponent search() should call weatherService.searchLocation when some character is typed" time="0.103" classname="unit.SearchComponent"/>
-  <testcase name="SearchComponent selectedLocation() should emit cityid" time="0.107" classname="unit.SearchComponent"/>
-  <testcase name="SearchComponent selectedLocation() should be called when cityName is clicked" time="0.098" classname="unit.SearchComponent"/>
+  <testcase name="AppComponent should render title in a text-mid class" time="0.364" classname="unit.AppComponent"/>
+  <testcase name="AppComponent should call weatherService.getCityDetails when getCityDetails() is called" time="0.262" classname="unit.AppComponent"/>
+  <testcase name="CityComponent should display city and country" time="0.083" classname="unit.CityComponent"/>
+  <testcase name="CityComponent should display formatted date" time="0.085" classname="unit.CityComponent"/>
+  <testcase name="CityComponent should display temperature with only 1 decimal" time="0.082" classname="unit.CityComponent"/>
+  <testcase name="CityComponent should display temperature with minimum 2 digits left to decimal" time="0.084" classname="unit.CityComponent"/>
+  <testcase name="CityComponent should display weather name" time="0.079" classname="unit.CityComponent"/>
+  <testcase name="SearchComponent search() should call weatherService.searchLocation when some character is typed" time="0.122" classname="unit.SearchComponent"/>
+  <testcase name="SearchComponent selectedLocation() should emit cityid" time="0.11" classname="unit.SearchComponent"/>
+  <testcase name="SearchComponent selectedLocation() should be called when cityName is clicked" time="0.104" classname="unit.SearchComponent"/>
   <system-out>
-    <![CDATA[Mozilla/5.0 (win32) AppleWebKit/537.36 (KHTML, like Gecko) jsdom/11.12.0 LOG: 'In city Component', undefined
-,Mozilla/5.0 (win32) AppleWebKit/537.36 (KHTML, like Gecko) jsdom/11.12.0 LOG: 'In city Component', undefined
-,Mozilla/5.0 (win32) AppleWebKit/537.36 (KHTML, like Gecko) jsdom/11.12.0 LOG: undefined
-
+    <![CDATA[
 ]]>
   </system-out>
   <system-err/>
