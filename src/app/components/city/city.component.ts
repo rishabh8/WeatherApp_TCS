@@ -14,17 +14,13 @@ export class CityComponent implements OnInit {
      - display the city details in the template
   */
 
-  @Input()cityDetails;
+  @Input()cityDetails: IWeatherData;
   i;
 
   constructor() { }
 
   ngOnInit() {
 
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log("In city Component" , this.cityDetails);
   }
 
 }

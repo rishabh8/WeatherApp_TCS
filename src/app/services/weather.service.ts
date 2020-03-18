@@ -12,7 +12,6 @@ import {Subject, Observable} from 'rxjs';
 export class WeatherService {
 
   private rawData: IWeatherRawData;
-  private weData : IWeatherData;
 
   cityDetails = new Subject<IWeatherData>();
   cityDetailChange = this.cityDetails.asObservable();
@@ -62,7 +61,7 @@ export class WeatherService {
       const date = obj.applicable_date;
       const temperature = obj.the_temp;
       const weather_name = obj.weather_state_name;
-      const weather_image = `https://www.metaweather.com/static/img/weather/.svg`;
+      const weather_image = 'https://www.metaweather.com/static/img/weather/' + obj.weather_state_abbr + '.svg';
 
       transformedWeather.push({ date, temperature, weather_name, weather_image} as ICityWeather);
     });
