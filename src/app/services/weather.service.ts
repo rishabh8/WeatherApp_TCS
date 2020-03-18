@@ -12,8 +12,10 @@ import {Subject, Observable} from 'rxjs';
 export class WeatherService {
 
   private rawData: IWeatherRawData;
-  //cityDetails = new Subject();
-  //cityDetailChange = this.cityDetails.asObservable();
+  private weData : IWeatherData;
+
+  cityDetails = new Subject<IWeatherData>();
+  cityDetailChange = this.cityDetails.asObservable();
 
   constructor(
     private http: HttpClient
@@ -45,12 +47,12 @@ export class WeatherService {
        - fetch the city weather data
        - transform the received data to required "IWeatherData" format using transformRawData() func
     */
-   return Observable.create(
+
     this.http.get<IWeatherRawData>(this.baseUrl + 'api/location/' + woeid).subscribe(data => {
       this.rawData = data;
-      //console.log(this.transformRawData(this.rawData));
-      return this.transformRawData(this.rawData);
-    }));
+      this.cityDetails.next(this.transformRawData(this.rawData));
+    });
+    return this.cityDetailChange;
   }
 
   transformRawData(rawData: IWeatherRawData) {
