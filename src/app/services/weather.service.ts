@@ -2,7 +2,6 @@ import { ICityWeather } from './../models/IWeatherData.interface';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-
 import { IWeatherRawData } from '../models/IWeatherRawData.interface';
 import { ISearchResult, IWeatherData } from '../models/IWeatherData.interface';
 import {Subject, Observable} from 'rxjs';
@@ -20,7 +19,7 @@ export class WeatherService {
     private http: HttpClient
   ) { }
 
-  baseUrl = 'https://cors-anywhere.herokuapp.com/https://www.metaweather.com/';
+  baseUrl = 'https://cors-anywhere.herokuapp.com/https://www.metaweather.com';
 
 
   searchLocation(term): Observable<ISearchResult[]> {
@@ -29,7 +28,9 @@ export class WeatherService {
        - get list of cities based on the searched string
        sample url: baseUrl/api/location/search/query=paris
     */
-    return this.http.get<ISearchResult[]>(this.baseUrl + 'api/location/search/?query=' + term);
+
+    return this.http.get<ISearchResult[]>(this.baseUrl + '/api/location/search/?query=' + term);
+
   }
 
   getCityDetails(woeid): Observable<IWeatherData> {
@@ -47,7 +48,7 @@ export class WeatherService {
        - transform the received data to required "IWeatherData" format using transformRawData() func
     */
 
-    this.http.get<IWeatherRawData>(this.baseUrl + 'api/location/' + woeid).subscribe(data => {
+    this.http.get<IWeatherRawData>(this.baseUrl + '/api/location/' + woeid).subscribe(data => {
       this.rawData = data;
       this.cityDetails.next(this.transformRawData(this.rawData));
     });

@@ -56,7 +56,14 @@ describe('SearchComponent', () => {
       component.search(mockSeaarchedTerm);
       expect(service.searchLocation).toHaveBeenCalledWith(mockSeaarchedTerm);
     });
+    it('should not call weatherService.searchLocation when searchedString is empty', () => {
+      const mockSeaarchedTerm = '';
+      spyOn(service, 'searchLocation').and.callThrough();
 
+      component.search(mockSeaarchedTerm);
+      expect(component.searchResults).toEqual(undefined);
+      expect(service.searchLocation).not.toHaveBeenCalledWith(mockSeaarchedTerm);
+    });
   });
 
   describe('selectedLocation()', () => {
@@ -107,7 +114,10 @@ describe('SearchComponent', () => {
 
       component.selectedLocation(mockCityDetails);
     });
-
+    it('should clear searchResults', () => {
+      component.selectedLocation(mockCityDetails);
+      expect(component.searchResults).toBeNull();
+    });
     it('should be called when cityName is clicked', () => {
       spyOn(component, 'selectedLocation');
       const cityDe = fixture.debugElement.query(By.css('.searchItem'));
