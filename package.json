@@ -40,7 +40,7 @@
     "codelyzer": "~5.2.2",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
-    "jsdom": "^11.11.0",
+    "jsdom": "^16.2.1",
     "karma": "~1.7.1",
     "karma-chrome-launcher": "~2.2.0",
     "karma-coverage-istanbul-reporter": "~2.1.1",
