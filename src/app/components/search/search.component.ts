@@ -28,7 +28,7 @@ export class SearchComponent implements OnInit {
                   and assign the results to searchResults array
                 - if input field is empty, clear the searResults array
         */
-      if(term.trim() !== '') {
+      if (term.trim() !== '') {
         this.weatherService.searchLocation(term).subscribe(data => {
           this.searchResults = data;
         });
@@ -48,8 +48,8 @@ export class SearchComponent implements OnInit {
       //    console.log(data);
       //    this.selectedCity.emit(data);
       //  });
-      //this.searchInput.value = '';
-      this.searchResults=null;
+      // this.searchInput.value = '';
+      this.searchResults = null;
       this.selectedCity.emit(cityDetails.woeid);
 
     }
