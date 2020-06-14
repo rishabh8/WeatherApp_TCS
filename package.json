@@ -50,6 +50,7 @@
     "karma-jsdom-launcher": "^8.0.2",
     "karma-junit-reporter": "^2.0.1",
     "karma-spec-reporter": "0.0.32",
+
     "protractor": "~5.4.4",
     "ts-node": "~8.10.2",
     "tslint": "~6.1.1"
