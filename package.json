@@ -32,25 +32,27 @@
     "@angular/compiler-cli": "^6.0.2",
     "@angular-devkit/build-angular": "~0.13.10",
     "typescript": "~2.7.2",
+
     "@angular/cli": "~9.1.8",
     "@angular/language-service": "^9.1.2",
     "@types/jasmine": "~3.5.10",
     "@types/jasminewd2": "~2.0.8",
-    "@types/node": "~13.11.0",
+    "@types/node": "~14.0.13",
     "codelyzer": "~5.2.2",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
     "jsdom": "^16.2.2",
     "karma": "~1.7.1",
     "karma-chrome-launcher": "~3.1.0",
-    "karma-coverage-istanbul-reporter": "~2.1.1",
+    "karma-coverage-istanbul-reporter": "~3.0.3",
     "karma-jasmine": "~3.1.1",
     "karma-jasmine-html-reporter": "^1.5.3",
-    "karma-jsdom-launcher": "^8.0.1",
+    "karma-jsdom-launcher": "^8.0.2",
     "karma-junit-reporter": "^2.0.1",
     "karma-spec-reporter": "0.0.32",
-    "protractor": "~7.0.0",
-    "ts-node": "~8.8.1",
+
+    "protractor": "~5.4.4",
+    "ts-node": "~8.10.2",
     "tslint": "~6.1.1"
   }
 }
