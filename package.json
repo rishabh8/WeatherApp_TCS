@@ -25,7 +25,7 @@
     "@angular/platform-browser-dynamic": "^6.0.2",
     "@angular/router": "^6.0.2",
     "core-js": "^3.6.5",
-    "rxjs": "^6.5.5",
+    "rxjs": "^6.6.6",
     "zone.js": "^0.8.29"
   },
   "devDependencies": {
